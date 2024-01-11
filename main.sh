@@ -2,7 +2,7 @@
 sudo apt update
 
 # Install necessary tools
-sudo apt install curl
+sudo apt install curl git
 
 # Add Brave browser repository and key
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
@@ -37,3 +37,4 @@ sed -i 's/# auto_wayland = sway/auto_wayland = sway/' /etc/ly/config.ini
 sudo systemctl enable ly
 # make windows + r = rofi (app launcher)
 echo 'bindsym $mod+r exec rofi -show run' >> ~/.config/sway/config
+sudo apt remove git
