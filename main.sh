@@ -11,8 +11,14 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] http
 # Update package list again after adding new repository
 sudo apt update
 
-# Install Brave browser, Sway, PCManFM, Alacritty, Ly, Rofi, and Neofetch
-sudo apt install brave-browser sway pcmanfm alacritty ly rofi neofetch
+# Install Brave browser, Sway, PCManFM, Alacritty, Rofi, and Neofetch
+sudo apt install brave-browser sway pcmanfm alacritty rofi neofetch
+
+# Compiling ly
+git clone --recurse-submodules https://github.com/nullgemm/ly.git
+cd ly
+make -j2
+make install
 
 # Configure Sway for user 'vm'
 VM_HOME=$(getent passwd "vm" | cut -d: -f6)
